@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 cf295aae29bb7862a7631bff48e5b88ec813030d Leandro Santos <lds.leosantos@gmail.com> 1645797600 -0300	commit (initial): Inicio do Projeto - Inclusao do AdminLte 3.2 no Laravel
+cf295aae29bb7862a7631bff48e5b88ec813030d d57c8e8a2d76d5df7a4e8d9a2e2a310d2b51db31 Leandro Santos <lds.leosantos@gmail.com> 1645798830 -0300	commit: tradução Portugues
+d57c8e8a2d76d5df7a4e8d9a2e2a310d2b51db31 c53ad92e78ab894767a2aee9224449545b8649f6 Leandro Santos <lds.leosantos@gmail.com> 1645817904 -0300	commit: Cortando layouts - inicio do template Livros lidos
+c53ad92e78ab894767a2aee9224449545b8649f6 cd7981b2bc81b3e506cc83af2ed574973b99069e Leandro Santos <lds.leosantos@gmail.com> 1645838250 -0300	commit: Index livros finalizado - Inicio do formulario create livros
+cd7981b2bc81b3e506cc83af2ed574973b99069e cc380aff2cf2bbede6888c997dd820b3936b7134 Leandro Santos <lds.leosantos@gmail.com> 1646175173 -0300	commit: index - create livros quase finalizando
+cc380aff2cf2bbede6888c997dd820b3936b7134 3bed1e0327a347aa582100337937fd9b5d0bdd6e Leandro Santos <lds.leosantos@gmail.com> 1646175206 -0300	commit: ajustes simples na index
+3bed1e0327a347aa582100337937fd9b5d0bdd6e dc8ad3da26d61bd5e59bae021e0479193d3bd65d Leandro Santos <lds.leosantos@gmail.com> 1646318465 -0300	commit: create livros e edit livros finalizado -- inicio da blade show (visualizar livro)
+dc8ad3da26d61bd5e59bae021e0479193d3bd65d 090268fce339612c6da44a5159b17ac9b7543b2d Leandro Santos <lds.leosantos@gmail.com> 1646438921 -0300	commit: Começando preparar a view show
+090268fce339612c6da44a5159b17ac9b7543b2d 18c51c04caf48dda6d171b45a407469fc75e6651 Leandro Santos <lds.leosantos@gmail.com> 1646681719 -0300	commit: Rodape- dashboard ok - Inicio das views do usuario(leitor)
+18c51c04caf48dda6d171b45a407469fc75e6651 f5036821b58213dde389db4cc1539a78519a8671 Leandro Santos <lds.leosantos@gmail.com> 1647633632 -0300	commit: Trabalhando no metodo create, upload de fotos
+f5036821b58213dde389db4cc1539a78519a8671 c0f646fb33aed7b2443f9c5017ab74b93c5c4dc6 Leandro Santos <lds.leosantos@gmail.com> 1647977001 -0300	commit: Ajustando as imagens em show - edit
+c0f646fb33aed7b2443f9c5017ab74b93c5c4dc6 a6fe8f08eeb17118d1015d5cac79056df862d30a Leandro Santos <lds.leosantos@gmail.com> 1648832429 -0300	commit: pegar foto na index e show - ajuste na busca do texto - calculo do tempo de leitura
+a6fe8f08eeb17118d1015d5cac79056df862d30a 47ee34694f5a991b34b48081050d095dc6e4a9f5 Leandro Santos <lds.leosantos@gmail.com> 1649174800 -0300	commit: flash mensagem - metodo update
+47ee34694f5a991b34b48081050d095dc6e4a9f5 85c39e8e3cddc7af4cb18ac2526358acdedd641f Leandro Santos <lds.leosantos@gmail.com> 1649272870 -0300	commit: Frase que era para o rodape - passsou para dashboard
+85c39e8e3cddc7af4cb18ac2526358acdedd641f 1ee8e18b8fa64a1420a88f03dc725b0ac91f3da6 Leandro Santos <lds.leosantos@gmail.com> 1649359153 -0300	commit: inclusçao do botao status no edit rodape
+1ee8e18b8fa64a1420a88f03dc725b0ac91f3da6 87fda912aa6f65dfe0375451e2e1b93d79bb6727 Leandro Santos <lds.leosantos@gmail.com> 1649445309 -0300	commit: count livros sum paginas lidas -
+87fda912aa6f65dfe0375451e2e1b93d79bb6727 ae769e115264d8719fd90755b1797747c4893eeb Leandro Santos <lds.leosantos@gmail.com> 1649446012 -0300	commit: deletar frase
+ae769e115264d8719fd90755b1797747c4893eeb 5e6e62c6f07a3783ba6cd2715cee240a03954a58 Leandro Santos <lds.leosantos@gmail.com> 1649695140 -0300	commit: create rodape , ajuste botão cancelar
+5e6e62c6f07a3783ba6cd2715cee240a03954a58 dbeb61874a092886868c8a181de00ea6436c111e Leandro Santos <lds.leosantos@gmail.com> 1649791679 -0300	commit: Laravel ui - perfil do ususario - foto do perfil
+dbeb61874a092886868c8a181de00ea6436c111e 381d1303b3ccbd5fd42e21dbc926ddad61a65abb Leandro Santos <lds.leosantos@gmail.com> 1651592772 -0300	commit: Ui - ALterando o template do UI
+381d1303b3ccbd5fd42e21dbc926ddad61a65abb 211f99e7efeb35fbc2a7be95d120323d5a52dae4 Leandro Santos <lds.leosantos@gmail.com> 1651593013 -0300	commit: Alteração no menu lateral
