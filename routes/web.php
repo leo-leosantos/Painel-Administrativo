@@ -27,7 +27,7 @@ Route::group(['namespace' => 'Admin',
             'prefix' => 'admin',
             'middleware' => 'auth'], function() {
     Route::resource('livros', 'LivroController');
-    Route::get('listar_livros', 'LivroController@listarLivros')->name('livros.listarLivros');
+    Route::match(['get','post'],'listar_livros', 'LivroController@listarLivros')->name('livros.listarLivros');
 
     Route::resource('user', 'UserController');
     Route::get('logout','UserController@logout')->name('user.logout');

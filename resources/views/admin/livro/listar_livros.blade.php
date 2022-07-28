@@ -13,12 +13,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Livros Lidos por periodo</h1>
+
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <a href="{{ route('livros.index') }}">
                         <button type="button" class="btn btn-success float-right"><i class="fas fa-book"></i>
-                             Livros Lidos
+                            Livros Lidos
                         </button>
                     </a>
                 </div><!-- /.col -->
@@ -33,38 +33,66 @@
             <!-- Small boxes (Stat box) -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title ">Lista dos Livros Lidos</h3>
+                    <h3 class="card-title ">Pesquisar Livros</h3>
                 </div>
+
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <div class="row">
-                        <!--teirceio row -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Data Inicio Da Leitura:</label>
-                                <input type="date" class="form-control" name="data_inicio_leitura"
-                                    value="{{ old('data_inicio_leitura') }}">
-                                @error('data_inicio_leitura')
-                                    <div class="form-control is-invalid">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                    <form enctype="multipart/form-data" action="{{ route('livros.listarLivros') }}" method="post">
+                        @csrf
+                        <div class="row">
+                            <!--teirceio row -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Data Inicio Da Pesquisa:</label>
+                                    <input type="date" class="form-control" name="data_inicio_pesquisa"
+                                        value="{{ old('data_inicio_leitura') }}">
+                                    @error('data_inicio_leitura')
+                                        <div class="form-control is-invalid">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Data Fim Da Leitura:</label>
-                                <input type="date" class="form-control" name="data_fim_leitura"
-                                    value="{{ old('data_fim_leitura') }}">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Data Fim Da pesquisa:</label>
+                                    <input type="date" class="form-control" name="data_fim_pesquisa"
+                                        value="{{ old('data_fim_leitura') }}">
+                                </div>
                             </div>
+                        </div><!-- fim tericeiro row -->
+                        <div class="row">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
-                    </div><!-- fim tericeiro row -->
+                    </form>
                 </div>
                 <!-- /.card-body -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <!-- Small boxes (Stat box) -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title ">Livro lidos no Periodo Pesquisado</h3>
+                </div>
+
+                <!-- /.card-header -->
+
 
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
+
                             <tr>
                                 <th>#</th>
                                 <th>Titulo</th>
@@ -74,18 +102,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if($pesquisarLivros != null)
+                                @foreach ($pesquisarLivros as $livro )
                                 <tr>
-                                    <td>1</td>
-                                    <td>Nome do livro</td>
-                                    <td>autor</td>
-                                    <td> 455</td>
-                                    <td>22-10-1990</td>
-
+                                    <td>{{ $livro->id  }}</td>
+                                    <td>{{ $livro->titulo }}</td>
+                                    <td>{{ $livro->autor }}</td>
+                                    <td> {{ $livro->numero_pagina }}</td>
+                                    <td>{{ date('d-m-Y',strtotime($livro->data_inicio_leitura)) }}</td>
                                 </tr>
+                                @endforeach
+                            @endif
                         </tbody>
 
                     </table>
                 </div>
+
+                <!-- /.card-body -->
             </div>
             <!-- /.row -->
             <!-- Main row -->
@@ -95,7 +128,6 @@
 @endsection
 
 @section('js')
-
     <script>
         $(function() {
             $("#example1").DataTable({
@@ -144,6 +176,4 @@
     <script src="{{ asset('backend/assets/js/plugins/datatables-buttons/js/buttons.print.js') }}"></script>
 
     <script src="{{ asset('backend/assets/js/plugins/datatables-buttons/js/buttons.colVis.js') }}"></script>
-
 @endsection
-

@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Admin;
 use DateTime;
 use App\Livro;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+//tive que criar um novo para no update a foto poder ser nula
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\LivroRequest as LivroRequest;
-//tive que criar um novo para no update a foto poder ser nula
 use App\Http\Requests\LivroUpdateRequest as LivroUpdateRequest;
+
 
 class LivroController extends Controller
 {
@@ -143,8 +146,32 @@ class LivroController extends Controller
     }
 
 
-    public function listarLivros()
+    public function listarLivros(Request $request)
     {
-        return view('admin.livro.listar_livros');
+
+            $pesquisarLivros = null;
+            $data_inicio = $request->get('data_inicio_pesquisa');
+            $data_fim = $request->get('data_fim_pesquisa');
+
+
+            $pesquisarLivros =  $this->pesquisarLivros($data_inicio, $data_fim);
+
+            return view('admin.livro.listar_livros',[
+                'pesquisarLivros' => $pesquisarLivros
+            ]);
+
+    }
+    public function pesquisarLivros($data_inicio, $data_fim)
+    {
+        $query = Livro::query();
+       if((!empty($data_inicio)) &&  (!empty($data_fim))){
+
+        //dd($data_fim, $data_inicio);
+          $dados =  $query->select('id','titulo','autor','numero_pagina','data_inicio_leitura')->whereDate('data_inicio_leitura', '>=',  $data_inicio)->get();
+          return $dados;
+       }
+
+
+
     }
 }
