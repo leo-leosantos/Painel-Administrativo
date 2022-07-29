@@ -46,8 +46,8 @@
                                 <div class="form-group">
                                     <label>Data Inicio Da Pesquisa:</label>
                                     <input type="date" class="form-control" name="data_inicio_pesquisa"
-                                        value="{{ old('data_inicio_leitura') }}">
-                                    @error('data_inicio_leitura')
+                                        value="{{ old('data_inicio_pesquisa') }}">
+                                    @error('data_inicio_pesquisa')
                                         <div class="form-control is-invalid">
                                             {{ $message }}
                                         </div>
@@ -56,17 +56,21 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Data Fim Da pesquisa:</label>
+                                    <label>Data Fim da Pesquisa:</label>
                                     <input type="date" class="form-control" name="data_fim_pesquisa"
                                         value="{{ old('data_fim_leitura') }}">
                                 </div>
                             </div>
                         </div><!-- fim tericeiro row -->
                         <div class="row">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <div class="form-group">
+                                <label for="pesquisarLivros">Pesquisar:</label>
+                                <button type="submit" id="pesquisarLivros" class="btn btn-success">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </div>
+
                     </form>
                 </div>
                 <!-- /.card-body -->
@@ -83,7 +87,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title ">Livro lidos no Periodo Pesquisado</h3>
+                    <h3 class="card-title ">Livro Lidos no Periodo Pesquisado</h3>
                 </div>
 
                 <!-- /.card-header -->
@@ -102,15 +106,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if($pesquisarLivros != null)
-                                @foreach ($pesquisarLivros as $livro )
-                                <tr>
-                                    <td>{{ $livro->id  }}</td>
-                                    <td>{{ $livro->titulo }}</td>
-                                    <td>{{ $livro->autor }}</td>
-                                    <td> {{ $livro->numero_pagina }}</td>
-                                    <td>{{ date('d-m-Y',strtotime($livro->data_inicio_leitura)) }}</td>
-                                </tr>
+                            @if ($pesquisarLivros != null)
+                                @foreach ($pesquisarLivros as $livro)
+                                    <tr>
+                                        <td>{{ $livro->id }}</td>
+                                        <td>{{ $livro->titulo }}</td>
+                                        <td>{{ $livro->autor }}</td>
+                                        <td> {{ $livro->numero_pagina }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($livro->data_inicio_leitura)) }}</td>
+                                    </tr>
                                 @endforeach
                             @endif
                         </tbody>

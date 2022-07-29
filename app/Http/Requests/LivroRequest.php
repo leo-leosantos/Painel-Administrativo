@@ -33,7 +33,8 @@ class LivroRequest extends FormRequest
             'editora' => 'required|max:50',
             'data_inicio_leitura' => 'required',
             'foto_capa' => ['required','image','dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'],
-            'sinopse' => 'required'
+            'sinopse' => 'required',
+            'data_inicio_pesquisa'=>'required'
         ];
     }
 
@@ -43,7 +44,8 @@ class LivroRequest extends FormRequest
             'required' => 'O campo :attribute  é obrigatório',
             'titulo.max' => 'O campo titulo comporta no maximo 100 caracteres',
             'autor.max' => 'O campo titulo comporta no maximo 100 caracteres',
-            'foto_capa.required'=>'Permitido  apenas imagens'
+            'foto_capa.required'=>'Permitido  apenas imagens',
+
         ];
     }
 
