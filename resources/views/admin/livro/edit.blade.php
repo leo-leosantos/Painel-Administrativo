@@ -92,7 +92,7 @@
                                 <div class="form-group">
                                     <label>Editora</label>
                                     <input type="text" name="editora" class="form-control"
-                                        placeholder="Digite o nome da editora" value=" {{ $livro->editora }}">
+                                         value=" {{ $livro->editora }}">
                                 </div>
                             </div>
                         </div>
@@ -105,19 +105,14 @@
                                 <div class="form-group">
                                     <label>Data Inicio Da Leitura:</label>
                                     <input type="date" class="form-control" name="data_inicio_leitura"
-                                        value="{{ $livro->data_inicio_leitura }}">
-                                    @error('data_inicio_leitura')
-                                        <div class="form-control is-invalid">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    value="{{ $livro->data_inicio_leitura->toDateString() }}"/>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Data Fim Da Leitura:</label>
                                     <input type="date" class="form-control" name="data_fim_leitura"
-                                        value="{{ $livro->data_fim_leitura }}">
+                                        value="{{ $livro->data_fim_leitura->toDateString() }}">
                                 </div>
                             </div>
                         </div><!-- fim tericeiro row -->

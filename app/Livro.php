@@ -11,6 +11,11 @@ class Livro extends Model
 {
     protected $fillable = ['titulo', 'autor', 'slug', 'serie', 'volume', 'numero_pagina', 'editora', 'data_inicio_leitura', 'data_fim_leitura', 'foto_capa', 'sinopse'];
 
+    protected $casts = [
+        'data_inicio_leitura' => 'datetime:Y-m-d',
+        'data_fim_leitura' => 'datetime:Y-m-d',
+    ];
+
     public function setSlug()
     {
         if (!empty($this->titulo)) {

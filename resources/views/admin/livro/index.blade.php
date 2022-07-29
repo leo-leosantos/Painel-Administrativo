@@ -63,6 +63,8 @@
                                     <td> {{ $livro->serie }}</td>
                                     <td>{{ $livro->numero_pagina }}</td>
                                     <td>{{ date('d/m/Y', strtotime($livro->data_inicio_leitura)) }}</td>
+
+
                                     <td><img src="{{ $livro->getfoto() }}" class="img-fluid" width="100" height="100" alt="{{ $livro->slug }}" ></td>
                                     <td>
                                         <a href="{{ route('livros.show', ['livro' => $livro->slug]) }}"

@@ -72,12 +72,16 @@ class LivroController extends Controller
         $livro = Livro::where('slug', $slug)->first();
 
         if (!empty($livro->data_fim_leitura)) {
-            $CalculotempoLeitura = DateTime::createFromFormat('Y-m-d', $livro->data_inicio_leitura)->diff(DateTime::createFromFormat('Y-m-d', $livro->data_fim_leitura));
+
+            $datetime1 = new DateTime(date("Y-m-d H:i:s", strtotime($livro->data_inicio_leitura)));
+            $datetime2 = new DateTime(date("Y-m-d H:i:s", strtotime($livro->data_fim_leitura)));
+
+            $CalculotempoLeitura = $datetime1->diff($datetime2);
             $tempo = $CalculotempoLeitura->days;
+
         } else {
             $tempo = 0;
         }
-
 
         return view('admin.livro.show', ['livro' => $livro, 'tempo' => $tempo]);
     }
@@ -93,6 +97,7 @@ class LivroController extends Controller
         $livro = Livro::where('slug', $slug)->first();
 
 
+       // dd($livro);
         return view('admin.livro.edit', [
             'livro' => $livro
         ]);
